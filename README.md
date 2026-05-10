@@ -126,6 +126,9 @@ Sends a new chat message.
   - `logged_user_id`
   - `other_user_id`
   - `message`
+- Note:
+  - Current implementation uses `GET` for message sending.
+  - For new API versions, prefer `POST` for create/write operations.
 
 ### 7) `GET /GetLetters`
 Returns initials for a user by mobile number.
@@ -170,3 +173,4 @@ Also ensure the database schema includes the required tables:
 - This repository currently does not include a complete frontend implementation (only a placeholder `web/index.html`).
 - There is no automated test suite or single standard build command included in the repository root.
 - Avatar images are stored under the deployed web app path in an `AvatarImages` directory.
+- Request parameter naming is not fully uniform across endpoints (e.g., `firstName`/`lastName` in `SignUp` vs `first_name`/`last_name` in `UpdateUser`).
